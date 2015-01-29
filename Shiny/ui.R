@@ -7,8 +7,9 @@ shinyUI(fluidPage(
     sidebarPanel(
       conditionalPanel(
         'input.dataset === "diamonds"',
+        # needs to use our diamonds data
         checkboxGroupInput('show_vars', 'Columns in diamonds to show:',
-                           names(diamonds), selected = names(diamonds))
+                           names(sdf), selected = names(sdf))
       )
     ),
     mainPanel(
