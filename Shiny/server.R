@@ -15,11 +15,9 @@ shinyServer(function(input, output) {
   
   sdf <<- data.frame(eval(parse(text=substring(s, 1, 2^31-1))))
   
-  
-  
   # a large table, reative to input$show_vars
   output$mytable1 <- renderDataTable({
     library(ggplot2)
-    sdf[, input$show_vars, drop = FALSE]
+    sdf[, ]
   })  
 })
